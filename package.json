@@ -1,0 +1,31 @@
+{
+  "name": "ecommerce_site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "cd frontend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminebelho/ecommerce_site.git"
+  },
+  "author": "aminebelho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminebelho/ecommerce_site/issues"
+  },
+  "homepage": "https://github.com/aminebelho/ecommerce_site#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4"
+  }
+}
