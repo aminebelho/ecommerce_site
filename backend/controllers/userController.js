@@ -66,7 +66,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
   if (user) {
     res.json({
-      _id: user._id,
+      // _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
@@ -89,6 +89,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     if (req.body.password) {
       user.password = req.body.password;
     }
+    
 
     const updatedUser = await user.save();
 
@@ -117,10 +118,9 @@ const getUsers = asyncHandler(async (req, res) => {
 // @route   DELETE /api/users/:id
 // @access  Private/Admin
 const deleteUser = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findByIdAndDelete(req.params.id);
 
   if (user) {
-    await user.remove();
     res.json({ message: 'User removed' });
   } else {
     res.status(404);
