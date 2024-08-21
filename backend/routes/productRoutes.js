@@ -12,10 +12,10 @@ const { protect, admin } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-// Public routes
-router.route('/').get(getProducts); // Get all products
 router.get('/top', getTopProducts); // Get top rated products
 
+// Public routes
+router.route('/').get(getProducts); // Get all products
 router.route('/:id').get(getProductById); // Get a single product by ID
 
 // Protected routes
