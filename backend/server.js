@@ -11,6 +11,8 @@ mongoose.connect(process.env.MONGO_URI , {
 
 const app = express();
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Middleware to parse incoming JSON requests
@@ -19,6 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Define routes
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
+
 
 // Error handling middleware
 app.use(notFound);
