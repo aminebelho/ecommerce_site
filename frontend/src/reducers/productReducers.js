@@ -7,6 +7,7 @@ import {
     PRODUCT_DETAILS_FAIL,
   } from '../constants/productConstants';
   
+  // Reducer to handle product list state
   export const productListReducer = (state = { products: [] }, action) => {
     switch (action.type) {
       case PRODUCT_LIST_REQUEST:
@@ -20,10 +21,11 @@ import {
     }
   };
   
+  // Reducer to handle single product details state
   export const productDetailsReducer = (state = { product: { reviews: [] } }, action) => {
     switch (action.type) {
       case PRODUCT_DETAILS_REQUEST:
-        return { loading: true, ...state };
+        return { ...state, loading: true };
       case PRODUCT_DETAILS_SUCCESS:
         return { loading: false, product: action.payload };
       case PRODUCT_DETAILS_FAIL:

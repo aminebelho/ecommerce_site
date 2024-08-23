@@ -14,6 +14,7 @@ import {
     USER_UPDATE_PROFILE_FAIL,
   } from '../constants/userConstants';
   
+  // Reducer to handle user login state
   export const userLoginReducer = (state = {}, action) => {
     switch (action.type) {
       case USER_LOGIN_REQUEST:
@@ -29,6 +30,7 @@ import {
     }
   };
   
+  // Reducer to handle user registration state
   export const userRegisterReducer = (state = {}, action) => {
     switch (action.type) {
       case USER_REGISTER_REQUEST:
@@ -42,6 +44,7 @@ import {
     }
   };
   
+  // Reducer to handle user details state
   export const userDetailsReducer = (state = { user: {} }, action) => {
     switch (action.type) {
       case USER_DETAILS_REQUEST:
@@ -55,6 +58,7 @@ import {
     }
   };
   
+  // Reducer to handle user profile update state
   export const userUpdateProfileReducer = (state = {}, action) => {
     switch (action.type) {
       case USER_UPDATE_PROFILE_REQUEST:
