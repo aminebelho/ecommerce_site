@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
+import LoginScreen from './screens/LoginScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <main className="container mx-auto px-4">
+        <Routes>
+          {/* <Route path="/login" element={<LoginScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/cart/:id?" element={<CartScreen />} /> */}
+          <Route path="/" element={<HomeScreen />} exact />
+        </Routes>
+      </main>
+    </Router>
   );
-}
+};
 
 export default App;
