@@ -11,10 +11,10 @@ const App = () => {
     <Router>
       <main className="container mx-auto px-4">
         <Routes>
-          {/* <Route path="/login" element={<LoginScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/product/:id" element={<ProductScreen />} />
-          <Route path="/cart/:id?" element={<CartScreen />} /> */}
+          <Route path="/cart/:id?" element={<CartScreen />} />
           <Route path="/" element={<HomeScreen />} exact />
         </Routes>
       </main>
